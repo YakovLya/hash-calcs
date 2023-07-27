@@ -44,7 +44,7 @@ string prepare_msg(string msg){
     int padding = (448 + 512 * (prepared.size() / 448)) - prepared.size() + (64 - length_bin.size()); // how many '0' need to write in the end
     while(padding --)
         prepared += '0';
-    prepared += length_bin;
+    prepared += length_bin; // write length of the original message to the end (bei)
     return prepared;
 }
 
